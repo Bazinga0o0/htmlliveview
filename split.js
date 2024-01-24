@@ -88,40 +88,26 @@ document.getElementById('bild').addEventListener('click', function() {
 document.getElementById('fileInput').addEventListener('change', function() {
     if (this.files && this.files[0]) {
         var file = this.files[0];
-
-
         var reader = new FileReader();
-
         reader.onload = function(e) {
-
             var img = document.createElement('img');
-
-
             img.src = e.target.result;
             img.className = "previewImage";
-
-
             document.getElementById('preview2').appendChild(img);
         };
-
-
         reader.readAsDataURL(file);
     }
 });
 
 document.getElementById('editor').addEventListener('input', function() {
     var htmlContent = document.getElementById('editor').value;
-
-
     var imageSources = Array.from(document.querySelectorAll('#preview2 img')).map((img, index) => {
         return { name: 'img' + (index + 1), src: img.src };
     });
-
     imageSources.forEach(({ name, src }) => {
         var regex = new RegExp('<img[^>]*src\\s*=\\s*[\'"]?' + name + '[\'"]?[^>]*>', 'gi');
         var replacement = '<img src="' + src + '">';
         htmlContent = htmlContent.replace(regex, replacement);
     });
-
     document.getElementById('previewText').innerHTML = htmlContent;
 });
