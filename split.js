@@ -9,8 +9,8 @@ document.getElementById('editor').addEventListener('keydown', function(e) {
         var textBefore = v.substring(0,  cursorPos );
         var textAfter  = v.substring( cursorPos, v.length );
         document.getElementById('editor').value = textBefore + "<br>" + textAfter;
-        cursorPos = cursorPos + "<br>".length; // update the cursor position
-        document.getElementById('editor').setSelectionRange(cursorPos, cursorPos); // set the cursor position
+        cursorPos = cursorPos + "<br>".length; 
+        document.getElementById('editor').setSelectionRange(cursorPos, cursorPos); 
     }
 });
 document.getElementById('h1Button').addEventListener('click', function() {
@@ -89,22 +89,22 @@ document.getElementById('fileInput').addEventListener('change', function() {
     if (this.files && this.files[0]) {
         var file = this.files[0];
 
-        // Create a new FileReader object
+
         var reader = new FileReader();
 
         reader.onload = function(e) {
-            // Create a new image element
+
             var img = document.createElement('img');
 
-            // Set the src of the image to the data URL of the file
+
             img.src = e.target.result;
             img.className = "previewImage";
 
-            // Append the image to the #previewText div
+
             document.getElementById('preview2').appendChild(img);
         };
 
-        // Read the file as a data URL
+
         reader.readAsDataURL(file);
     }
 });
@@ -112,12 +112,11 @@ document.getElementById('fileInput').addEventListener('change', function() {
 document.getElementById('editor').addEventListener('input', function() {
     var htmlContent = document.getElementById('editor').value;
 
-    // Get the sources of the images in the #preview2 div
+
     var imageSources = Array.from(document.querySelectorAll('#preview2 img')).map((img, index) => {
         return { name: 'img' + (index + 1), src: img.src };
     });
 
-    // Replace simple names with actual sources
     imageSources.forEach(({ name, src }) => {
         var regex = new RegExp('<img[^>]*src\\s*=\\s*[\'"]?' + name + '[\'"]?[^>]*>', 'gi');
         var replacement = '<img src="' + src + '">';
