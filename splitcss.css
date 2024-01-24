@@ -1,0 +1,107 @@
+#editor, #preview {
+    width: 48%;
+    height: 70vh;
+    float: left;
+    box-sizing: border-box;
+    padding: 10px;
+    border: 1px solid #ccc;
+    overflow: auto;
+}
+#preview {
+    margin-left: 4%;
+}
+#previewText {
+    margin-top:0;
+    white-space: normal;
+    overflow-x: hidden;
+    word-wrap: break-word;
+    hyphens: auto;
+}
+#preview2 {
+    clear: both;
+    margin-top: 20px; /* adjust as needed */
+    border: 1px solid #ccc;
+}
+
+
+#editor{
+
+    max-width: 48%;
+    resize: vertical;
+}
+
+.previewImage {
+    padding: 5px;
+    width: 12vw;
+    height: 12vw; /* adjust as needed */
+    object-fit: cover;
+    object-position: center;
+}
+
+.button {
+    width: 100px;
+    height: 40px;
+    box-sizing: border-box;
+}
+
+#tools {
+    display: flex;
+    flex-direction: row;
+    gap: 10px; /* adjust as needed */
+    flex-wrap: wrap;
+}
+.tools {
+    max-height: 0;
+    padding: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out, padding 0.2s ease-out;
+    border: 1px solid #ccc;
+}
+#expandButton {
+    position: relative;
+    display: block;
+    left:24%;
+    transform: translateX(-50%);
+    transform: rotate(-90deg);
+    margin-top: 4px;
+    margin-bottom: 4px;
+}
+#expandButton span{
+    display: block;
+    width: 10px;
+    height: 2px;
+    background: black;
+    margin: 4px auto;
+    transition: transform 0.4s ease-out;
+}
+#span1 {
+    transform: rotate(135deg);
+}
+#span2 {
+    transform: rotate(-135deg);
+}
+
+#expandButton.expanded span:first-child {
+    transform: translateY(0px) rotate(45deg);
+}
+
+#expandButton.expanded span:last-child {
+    transform: translateY(0px) rotate(-45deg);
+}
+#fontSelectorContainer {
+    width: fit-content;
+    height: fit-content;
+}
+
+div {
+    padding: 0;
+    border: 0;
+    margin: 0;
+}
+
+textarea {
+    width: 100%;
+    padding: 0;
+    border: 0;
+    margin: 0;
+}

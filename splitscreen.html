@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple HTML Live Editor</title>
+    <link rel="stylesheet" href="splitcss.css">
+</head>
+<body>
+    <div id="tools" class="tools">
+        <button id="h1Button" class="Button">gr. Überschrift</button>
+        <button id="h2Button" class="Button">kl. Überschrift</button>
+        <select id="fontSelector" style="display: block;">
+            <option value="Arial">Arial</option>
+            <option value="Courier New">Courier New</option>
+            <option value="Georgia">Georgia</option>
+            <option value="Times New Roman">Times New Roman</option>
+            <option value="Verdana">Verdana</option>
+            <option value="Helvetica">Helvetica</option>
+            <option value="Tahoma">Tahoma</option>
+            <option value="Trebuchet MS">Trebuchet MS</option>
+            <option value="Lucida Sans Unicode">Lucida Sans Unicode</option>
+            <option value="Palatino Linotype">Palatino Linotype</option>
+
+            <option value="'Comic Sans MS'">Comic Sans MS</option>
+
+        </select>
+        <input id="fontSizeInput" type="number" min="1" placeholder="Font size">
+        <button id="addBild" class="button">Bild hinzufügen</button>
+        <button id="stextfield" class="button">Special Text</button>
+        <button id="sitextfield" class="button">Special inline Text</button>
+        <input id="fileInput" type="file" style="display: none;">
+        <button id="bild" class="button">Bild hochladen</button>
+    </div>
+    <div id="split" class="split">
+        <button id="expandButton"><span id="span1"></span><span id="span2"></span></button>
+    </div>
+    
+    <div>
+        <textarea id="editor" placeholder="Write here" spellcheck="false"></textarea>
+    </div>
+    <div id="preview">
+        <p id="previewText"></p>
+    </div>
+    <div id="preview2">
+    </div>
+    <script src="split.js"></script>
+</body>
+</html>
